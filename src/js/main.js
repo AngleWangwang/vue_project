@@ -9,11 +9,12 @@ Vue.use(vueResource);
 
 //导入自定义组件
 import App from '../component/App.vue';
-
+import router from './router.js';
 
 new Vue({
     el:"#app",
     render:function(c){
         return c(App)
-    }
+    },
+    router:router
 })
