@@ -2,7 +2,7 @@
     <div>
         <v-header></v-header>
         <main>
-            <div id="main">我是main</div>
+            <router-index>我是首页</router-index>
         </main>
         <v-footer></v-footer>
     </div>
