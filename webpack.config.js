@@ -13,8 +13,8 @@ module.exports = {
     },
     plugins: [
         new htmlWebpackPlugin({
-            // template: "./src/index.html",
-            template: 'html-withimg-loader!' + path.resolve(__dirname, "./src/index.html"),
+            template: "./index.html",
+            // template: 'html-withimg-loader!' + path.resolve(__dirname, "./src/index.html"),
             filename: "index.html",
             inject: "body"
         })
@@ -36,27 +36,27 @@ module.exports = {
                     'less-loader'
                 ]
             },
-            {
-                test: /\.scss$/,
-                use: [
-                    'style-loader',
-                    'css-loader',
-                    'sass-loader'
-                ]
-            },
+            // {
+            //     test: /\.scss$/,
+            //     use: [
+            //         'style-loader',
+            //         'css-loader',
+            //         'sass-loader'
+            //     ]
+            // },
             {
                 test: /\.tpl$/,
                 use: [
                     'html-loader'
                 ]
             },
-            {
-                test: /\.(jpg|pbg|gif)$/,
-                use: [
-                    { loader: "url-loader", options: { limit: 25000 } },
-                    'image-webpack-loader'
-                ]
-            },
+            // {
+            //     test: /\.(jpg|pbg|gif)$/,
+            //     use: [
+            //         { loader: "url-loader", options: { limit: 25000 } },
+            //         'image-webpack-loader'
+            //     ]
+            // },
             {
                 test: /\.vue$/,
                 use: [
