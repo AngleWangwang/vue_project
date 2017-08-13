@@ -50,18 +50,30 @@ module.exports = {
                     'html-loader'
                 ]
             },
-            // {
-            //     test: /\.(jpg|pbg|gif)$/,
-            //     use: [
-            //         { loader: "url-loader", options: { limit: 25000 } },
-            //         'image-webpack-loader'
-            //     ]
-            // },
+            {
+                test: /\.(jpg|pbg|gif|ttf)$/,
+                use: [
+                    { loader: "url-loader", options: { limit: 25000 } },
+                    // 'image-webpack-loader'
+                ]
+            },
             {
                 test: /\.vue$/,
                 use: [
                     'vue-loader'
                 ]
+            },
+            {
+                test: /\.js$/,
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        // 配置要解析的语法规范
+                        presets: ['es2015'],
+                        plugins: ['transform-runtime']
+                    }
+                },
+                exclude: /(node_modules)|bower_components/
             }
         ]
 
