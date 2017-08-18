@@ -3,6 +3,7 @@ import Vue from 'vue';
 import vueRouter from "vue-router"; 
 import vueResource from "vue-resource"; 
 
+
 //引入UI包
 import mintUI from 'mint-ui';
 
@@ -16,12 +17,18 @@ import "../../../node_modules/mui/examples/hello-mui/css/icons-extra.css";
 //导入全局过滤器
 import filters from './filters.js';
 
+//导入图片预览插件
+import vuePreview from 'vue-preview';
+
 //手动use启动插件
 Vue.use(vueRouter);
 Vue.use(vueResource);
 
 //手动启动UI插件
 Vue.use(mintUI);
+
+//手动启动图片预览插件
+Vue.use(vuePreview);
 
 //导入自定义组件
 import App from '../component/App.vue';

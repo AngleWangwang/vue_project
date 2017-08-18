@@ -10,29 +10,13 @@
     </section>    
 </template>
 <script>
-    import config from '../../js/config.js'
+   
     export default{
-        data(){
-            return {
-                list:[]
-            } 
-        },
-        methods:{
-            getList(){
-                this.$http.get(config.getlunbo).then(resp=>{
-                    if(resp.status==200){
-                        this.list=resp.body.message;
-                    }
-                })
-            }
-        },
-        created(){
-            this.getList();
-        }
+        props:["list"]
     }
 </script>
 <style lang="less">
-   .swipe{
+    .swipe{
           height:200px;
        a{
            display:block;

@@ -20,7 +20,7 @@
 </template>
 <script>
     import config from '../../js/config.js';
-    import ComponentTitle from '../common/title.vue'
+    import ComponentTitle from '../common/title.vue';
     export default{
         data(){
             return {
@@ -42,7 +42,7 @@
            this.getNews() 
         },
         components:{
-            "v-title":ComponentTitle
+            "v-title":ComponentTitle,
         }
     }
 </script>

@@ -51,7 +51,7 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(jpg|pbg|gif|ttf)$/,
+                test: /\.(jpg|png|gif|svg|ttf)$/,
                 use: [
                     { loader: "url-loader", options: { limit: 25000 } },
                     // 'image-webpack-loader'
@@ -75,6 +75,10 @@ module.exports = {
                 },
                 exclude: /(node_modules)|bower_components/
             }
+            // {
+            //     test:/vue-preview.src.*?js$/,
+            //     loader:"babel"
+            // }
         ]
 
     }

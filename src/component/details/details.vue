@@ -12,21 +12,23 @@
                 <span>点击量:{{details.click}}</span>
             </div>
         </div>
-    </section>
+        <v-comment :Did="id"></v-comment>
+    </section> 
 </template>
 <script>
     import config from '../../js/config.js';
     import ComponentTitle from '../common/title.vue';
+    import ComponentComment from '../common/comment.vue';
     export default{
         data(){
             return {
                 details:[],
-                title:"新闻详情"
+                title:"新闻详情",
+                id:this.$route.params.id
             }
         },
         methods:{
             getNewsDetails(){
-                // console.log("详情页进啦!!")
                 let url=config.getNewsDetails+this.$route.params.id;
                 this.$http.get(url).then(resp=>{
                     resp.status==200 && (this.details=resp.body.message[0])
@@ -37,7 +39,8 @@
             this.getNewsDetails();
         },
         components:{
-            "v-title": ComponentTitle
+            "v-title": ComponentTitle,
+            "v-comment" : ComponentComment
         }
     }
 </script>
